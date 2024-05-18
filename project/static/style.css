@@ -1,0 +1,133 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Freehand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Freehand&family=Shadows+Into+Light&display=swap'); */
+
+body{
+    background-color: #FEFAF6;
+}
+
+
+.main-text {
+    font-size: 80px;
+    
+}
+
+.main-text2 {
+    font-size: 40px;
+   
+    color: #1A4D2E;
+}
+
+
+.p-text{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+
+.btn.btn-danger {
+    background-color: #d6732d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.btn-danger:hover {
+    background-color: #ffb580;
+}
+
+.btn.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.btn-secondary b {
+    font-weight: bold;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #6f757a;
+}
+
+.btn.btn-secondary:hover b {
+    color: #fff;
+}
+.btn.btn-secondary:hover{
+    background-color:#4e5358 ;
+}
+
+
+#dashbrd {
+    margin-top: 100px;
+}
+
+
+
+.video-container {
+    max-width: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+#vdo{
+    margin-top: 50px;
+}
+
+.des{
+    font-family:'Shodowsintolight', cursive;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
+.animated-card {
+    animation: fadeIn 1.8s ease-in-out;
+    
+}
+
+
+.zoom-effect {
+    transition: transform 0.5s ease;
+}
+
+.card:hover .zoom-effect {
+    transform: scale(1.1);
+}
+
+img.hover-effect {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  img.hover-effect:hover {
+    transform: scale(1.05);
+  }
+  
+  #anim-1, #anim-2, #anim-3, #anim-4 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#anim-1:hover, #anim-2:hover, #anim-3:hover, #anim-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}

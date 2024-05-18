@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="shadow-lg">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}" style="color:#ebbb2a;"><b>Scooby</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</div>
+
+<br>
+
+<div class="container text-center mt-3">
+    <h1 class="main-text">Never <span style="color: #F3CA52;">miss</span> out</h1>
+    <p class="p-text">Schedule calls, meetings, mailings, or quotations,<br> and CRM automatically plans the next activity based on your sales script</p>
+</div>
+
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-danger w-100"><b>Start now - it's free</b></button>
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+            <button class="btn btn-secondary w-100"><b>Schedule a demo</b></button>
+        </div>
+    </div>
+    <p class="mt-3">Free, forever, with unlimited users. <a href="" style="text-decoration: none;color:orange;">See why</a></p>
+</div>
+
+<div class="container text-center" id="dashbrd">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{% static 'crm1.jpg' %}" alt="" class="img-thumbnail shadow-lg" style="width: 100%; height: auto;">
+      </div>
+      <div class="col-md-6">
+        <h2 class="des" style="margin-top: 100px;">Enhancing Business Relationships with Scooby CRM</h2>
+        <p class="parg">Scooby CRM transforms how businesses engage with customers by consolidating data, enabling personalized interactions, and aligning sales, marketing, and customer service efforts. It streamlines processes, enhances customer experiences, and drives revenue growth by fostering meaningful connections and delivering tailored solutions.</p>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="main-text" style="font-size: 50px;">How it works</h2>
+    <hr>
+</div>
+<div class="container" id="vdo">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="des">Your pipeline at a glance.</h2>
+            <p class="parg">Each opportunity is listed as a card with all the essential information; and each stage gives an overview of your expected revenues.</p>
+            <h2 class="des mt-4">Efficient organization</h2>
+            <p class="par">The Kanban view organizes opportunities by stage. Drag and drop them on the pipeline to move them from a stage.</p>
+        </div>
+        <div class="col-md-6" style="padding: 0;">
+          <video autoplay class="mb-4 shadow-lg" style="width: 100%; max-height: 500px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+              <source src="{% static 'crrm.webm' %}" type="video/webm">
+          </video>
+      </div>
+    </div>
+</div>
+
+<br><br><br>
+
+<div class="container-fluid text-center mt-5 mb-4">
+  <h1 class="mb-0" style="font-size: 50px;" >Turn reporting data into <span style="color: #ebbb2a;">money</span>💸</h1>
+  <p></p>
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{% static 'report.png' %}" alt="" class="hover-effect" style="width: 70%; height: 90%; background-color: transparent; margin-top: 19px;">
+    </div>
+    <div class="col-md-6">
+      <p class="parg" style="margin-top: 200px;"><b>Smart decisions</b> are based on accurate and real-time data. Dig deeper into your sales metrics with revenue forecasts, team performance analysis, and custom dashboards.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-dark bg-opacity-10 my-3 py-3">
+  <h1 class="text-xl-center">Our Features</h1>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card border rounded-3 py-3" id="anim-1" style="cursor: pointer;">
+          <div class="card-body">
+            <h2 class="card-title mx-2">Reduce manual entry ✨</h2>
+            <p class="card-text mx-2">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card border rounded-3 py-3" id="anim-2" style="cursor: pointer;">
+          <div class="card-body">
+            <h2 class="card-title mx-2">AI lead scoring ✨</h2>
+            <p class="card-text mx-2">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card border rounded-3 py-3" id="anim-3" style="cursor: pointer;">
+          <div class="card-body">
+            <h2 class="card-title mx-2">Manage leads ✨</h2>
+            <p class="card-text mx-2">Create, acquire, import, nurture, score, etc. Manage all aspects of your leads in a single place.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card border rounded-3 py-3" id="anim-4" style="cursor: pointer;">
+          <div class="card-body">
+            <h2 class="card-title mx-2">Enable automation ✨</h2>
+            <p class="card-text mx-2">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="btn btn-outline-danger text-center">See more features</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="my-3 py-3 text-center">
+    <h1 class="main-text">Join now</h1>
+    <p class="parg"><b>Create professional-looking quotations</b> in no time with a user-friendly interface. Select your products from the catalog and let Scooby CRM handle the rest.</p>
+    <br>
+    <a href="" class="btn btn-outline-warning mb-3">Create account for free</a><br>
+    <i>No credit card required</i>
+  </div>
+</div>
+
+<footer class="footer py-4 bg-dark text-white-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="text-uppercase mb-4">Scooby CRM</h5>
+          <p>Streamline your sales process and boost your conversions with Scooby CRM. Manage leads, track opportunities, and close deals faster.</p>
+          <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="text-uppercase mb-4">Contact</h5>
+          <ul class="list-unstyled mb-0">
+            <li><i class="bi bi-house-door-fill me-2"></i> 123 Main Street, Anytown, USA</li>
+            <li><i class="bi bi-envelope-fill me-2"></i> info@scoobycrm.com</li>
+            <li><i class="bi bi-phone-fill me-2"></i> +1 (555) 555-5555</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="text-uppercase mb-4">Legal</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="text-white-50 small">Terms & Conditions</a></li>
+            <li><a href="#" class="text-white-50 small">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-4 text-white-50">
+      <p>© 2024 Scooby CRM. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
