@@ -1,68 +1,183 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archive</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/maicons.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/vendor/animate/animate.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archieves</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .dropzone {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
-<body style="background-color: #FEFAF6;">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
-    <div class="container">
-      <a href="{% url 'home' %}" class="navbar-brand">Scooby</a>
-
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse collapse" id="navbarContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="btn btn-primary ml-lg-2" href="{% url 'dashboard' %}">Dashboard</a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </nav>
-
-  <div class="container  mt-4">
-    <h2 class="mb-4 mt-3 text-center"> See Archives</h2>
-    <div id="archived-cards-container" class="row">
-      {% for card in archived_cards %}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-          <div class="card shadow-lg">
-            <img src="{{card.image.url}}" class="card-img-top hover-effect" alt="Card Image" style="height: 200px;">
-            <div class="card-body">
-              <h5 class="card-title">{{ card.title }}</h5>
-              <a href="{% url 'restore_card' card.id %}" class="btn btn-primary">Restore</a>
+<body >
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="{% url 'home' %}">Scooby</a>
+                </div>
             </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="{% url 'home' %}" class="sidebar-link">
+                        <i class="lni lni-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{% url 'dashboard' %}" class="sidebar-link">
+                        <i class="lni lni-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{% url 'archives' %}" class="sidebar-link">
+                        <i class="lni lni-archive"></i>
+                        <span>Archive</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="{% url 'home' %}" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Back</span>
+                </a>
+            </div>
+        </aside>
+        <div class="main p-3">
+            <div class="">
+                <h1>See Archieves here</h1>
+            </div>
 
-  <footer class="footer text-light-50 bg-dark " style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #0e2238; color: #fff; padding: 0.5px 0; text-align: center;">
-    <div class="copyright py-4 text-center text-white-50">
-      <p>Copyright © 2024 Scooby CRM. All Rights Reserved.</p>
-    </div>
-  </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <div class="container mt-4">
+              <div id="archived-cards-container" class="row">
+                {% for card in archived_cards %}
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <div class="card shadow-lg h-100">
+                      <img src="{{ card.image.url }}" class="card-img-top hover-effect" alt="Card Image" style="height: 200px;width: auto;">
+                      <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <a href="{% url 'restore_card' card.id %}" class="btn btn-primary mt-auto">Restore</a>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+    
+                
 
+    <script>
+        var alerts = document.querySelectorAll('.fade-out');
+        var fadeOutTime = 5000;
+        alerts.forEach(function(alert) {
+            setTimeout(function() {
+                alert.classList.add('fade');
+                alert.addEventListener('transitionend', function() {
+                    alert.parentNode.removeChild(alert);
+                });
+            }, fadeOutTime);
+        });
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("cardId", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const cardId = event.dataTransfer.getData("cardId");
+            archiveCard(cardId.replace('card-', ''));
+        }
+
+        function archiveCard(cardId) {
+            fetch(`/archive-card/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ card_id: cardId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    let cardElement = document.getElementById(`card-${cardId}`);
+                    if (cardElement) {
+                        cardElement.classList.add('archived-card');
+                        cardElement.style.display = 'none';
+                        location.reload();  
+                    } else {
+                        console.error(`Card element with ID card-${cardId} not found.`);
+                    }
+                } else {
+                    console.error('Failed to archive the card.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while archiving the card. Please try again later.');
+            });
+        }
+
+       
+        function touchStart(event) {
+            event.dataTransfer.setData("cardId", event.target.id);
+        }
+
+        function touchEnd(event) {
+            const cardId = event.dataTransfer.getData("cardId");
+            archiveCard(cardId.replace('card-', ''));
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.toggle-btn');
+
+    toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('expand');
+    });
+});
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
